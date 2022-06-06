@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Practice App</title>
+</head>
+<body>
+    {% if persons %}
+        <ul>
+        {% for person in persons %}
+            <li><a href="{% url 'django_app:person_details' person.identification_no %}">{{ person }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No person to show.</p>
+    {% endif %}
+</body>
+</html>
