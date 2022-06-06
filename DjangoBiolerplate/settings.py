@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-c6)z^xx%+$8-a^0+(*zf*rz!0ikycz+vbxno+&!b!jw5k47#n5
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '*',
     '0.0.0.0',
+    'localhost',
 ]
 
 
@@ -128,6 +130,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 CORS_ORIGIN_WHITELIST = [
-    'http://0.0.0.0:3000'
+    'http://*:*',
+    'http://0.0.0.0:3000',
+    'http://localhost:3000',
 ]
