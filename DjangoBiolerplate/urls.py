@@ -22,8 +22,6 @@ router = routers.DefaultRouter()
 router.registry.extend(django_app_router.registry)
 
 urlpatterns = [
-    # path('', include('django_app.urls')),
-    # path('app/', include('django_app.urls')),
     path('admin/', admin.site.urls),
     path('apis/', include(router.urls)),
     ]
