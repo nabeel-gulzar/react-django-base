@@ -1,10 +1,20 @@
 version: '3'
 
 services:
+  app:
+    build:
+      context: react-fe
+    image: sample:react
+    container_name: react_app
+    volumes:
+      - ./react-fe:/app
+      - ./react-fe/node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
   web:
     build: .
-    image: djangoapp:latest
-    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    image: sample:django
+#    command: bash -c "python manage.py runserver 0.0.0.0:8000"
     container_name: django_app
     volumes:
       - .:/django_app
